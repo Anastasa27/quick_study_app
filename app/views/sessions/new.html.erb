@@ -1,0 +1,19 @@
+<div class="page-header">
+  <h1>QuickStudy</h1>
+</div>
+
+
+    <%= form_tag(session_path) do %>
+      <%= label_tag(:username) %><br/>
+      <%= text_field_tag(:username) %><br>
+      <%= label_tag(:password) %><br>
+      <%= password_field_tag(:password) %><br>
+      <%= submit_tag('submit') %>
+    <% end %>
+  </div>
+  <br>
+  <div class="signup">
+    <p><%= link_to('Sign up!', new_user_path) %></p>
+  </div>
+</div>
+</div>
