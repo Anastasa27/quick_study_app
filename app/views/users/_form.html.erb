@@ -12,18 +12,30 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :username %><br>
+    <%= f.label :username %>*<br>
     <%= f.text_field :username %>
   </div>
+
+  <% if !@user.persisted? # if we are creating instead of editing... %>
   <div class="field">
-    <%= f.label :password %><br>
-    <%= f.text_field :password %>
+    <%= f.label :password %>*<br>
+    <%= f.password_field :password %></br>
+    <%= f.label :password_confirmation, 'Confirmation' %>*<br>
+    <%= f.password_field :password_confirmation %></br>
   </div>
-  <div class="field">
-    <%= f.label :private %><br>
-    <%= f.check_box :private %>
+
+  <% else %>
+    <div class="field">
+    <%= f.label :password, 'Please re-enter your Password to make changes'%>*<br>
+    <%= f.password_field :password %></br>
+    <%= f.label :password_confirmation, 'Password Confirmation' %>*<br>
+    <%= f.password_field :password_confirmation %></br>
   </div>
+  <% end %>
+
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+
+<p>Fields with a * are mandatory.</p>
