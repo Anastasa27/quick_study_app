@@ -13,3 +13,66 @@
  *= require_tree .
  *= require_self
  */
+
+ body {
+  font-family: 'Nixie One', cursive;
+  color:rgb(78,89,89);
+ }
+
+
+/*#flashcard-front {-webkit-box-shadow: 10px 11px 5px -8px rgba(0,0,0,0.75);
+-moz-box-shadow: 10px 11px 5px -8px rgba(0,0,0,0.75);
+box-shadow: 10px 11px 5px -8px rgba(0,0,0,0.75);
+border-radius: 7px 7px 7px 7px;
+-moz-border-radius: 7px 7px 7px 7px;
+-webkit-border-radius: 7px 7px 7px 7px;
+border: 0px solid #C0C0C0;
+
+}*/
+
+/*#flashcard-back {-webkit-box-shadow: 10px 11px 5px -8px rgba(0,0,0,0.75);
+-moz-box-shadow: 10px 11px 5px -8px rgba(0,0,0,0.75);
+box-shadow: 10px 11px 5px -8px rgba(0,0,0,0.75);
+border-radius: 7px 7px 7px 7px;
+-moz-border-radius: 7px 7px 7px 7px;
+-webkit-border-radius: 7px 7px 7px 7px;
+border: 0px solid #C0C0C0;
+
+}*/
+
+#flashcard-back {
+color: rgb(255,214,103);
+width: 350px;
+height: 250px;
+
+border: 1px #C0C0C0 solid;
+
+-webkit-border-radius: 7px;
+-moz-border-radius: 7px;
+border-radius: 7px;
+
+-moz-box-shadow: 1px 1px 1px 0px #888888;
+-webkit-box-shadow: 1px 1px 1px 0px #888888;
+box-shadow: 1px 1px 1px 0px #888888;
+}
+
+#flashcard-front {
+color:rgb(255, 255, 255 );
+width: 350px;
+height: 250px;
+
+border: 1px #C0C0C0 solid;
+
+-webkit-border-radius: 7px;
+-moz-border-radius: 7px;
+border-radius: 7px;
+
+-moz-box-shadow: 1px 1px 1px 0px #888888;
+-webkit-box-shadow: 1px 1px 1px 0px #888888;
+box-shadow: 1px 1px 1px 0px #888888;
+}
+
+
+
+
+

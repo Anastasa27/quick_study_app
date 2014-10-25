@@ -29,15 +29,15 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
 
-    respond_to do |format|
-      if @user.save
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
-        format.json { render :show, status: :created, location: @user }
-      else
-        format.html { render :new }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
-      end
-    end
+    # respond_to do |format|
+    #   if @user.save
+    #     format.html { redirect_to @user, notice: 'User was successfully created.' }
+    #     format.json { render :show, status: :created, location: @user }
+    #   else
+    #     format.html { render :new }
+    #     format.json { render json: @user.errors, status: :unprocessable_entity }
+    #   end
+    # end
   end
 
   # PATCH/PUT /users/1
@@ -45,7 +45,7 @@ class UsersController < ApplicationController
   def update
     respond_to do |format|
       if @user.update(user_params)
-        format.html { redirect_to @user, notice: 'User was successfully updated.' }
+        format.html { redirect_to @user, notice: 'User info was successfully updated.' }
         format.json { render :show, status: :ok, location: @user }
       else
         format.html { render :edit }
@@ -59,7 +59,7 @@ class UsersController < ApplicationController
   def destroy
     @user.destroy
     respond_to do |format|
-      format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
+      format.html { redirect_to users_url, notice: 'User info was successfully deleted' }
       format.json { head :no_content }
     end
   end
@@ -70,6 +70,24 @@ class UsersController < ApplicationController
       @user = User.find(params[:id])
     end
 
+    def load_user
+      @user = User.find_by(id: params[:id])
+      redirect_to root_path if !@user
+    end
+
+    def user_password_params
+      @user_password_params ||= params.require(:user).permit(
+        :old_password,
+        :password,
+        :password_confirmation
+      )
+    end
+
+    def authorize_user_only
+      unless current_user == @user
+        redirect_to user_path(current_user)
+      end
+    end
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
       params.require(:user).permit(:username, :password_digest, :private)

@@ -26,15 +26,15 @@ class StacksController < ApplicationController
   def create
     @stack = Stack.new(stack_params)
 
-    respond_to do |format|
-      if @stack.save
-        format.html { redirect_to @stack, notice: 'Stack was successfully created.' }
-        format.json { render :show, status: :created, location: @stack }
-      else
-        format.html { render :new }
-        format.json { render json: @stack.errors, status: :unprocessable_entity }
-      end
-    end
+    # respond_to do |format|
+    #   if @stack.save
+    #     format.html { redirect_to @stack, notice: 'Stack was successfully created.' }
+    #     format.json { render :show, status: :created, location: @stack }
+    #   else
+    #     format.html { render :new }
+    #     format.json { render json: @stack.errors, status: :unprocessable_entity }
+    #   end
+    # end
   end
 
   # PATCH/PUT /stacks/1
