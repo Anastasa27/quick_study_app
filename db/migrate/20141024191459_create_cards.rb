@@ -3,7 +3,7 @@ class CreateCards < ActiveRecord::Migration
     create_table :cards do |t|
       t.string :question
       t.string :answer
-      t.references :stack_id, index: true
+      t.references :stack
 
       t.timestamps
     end

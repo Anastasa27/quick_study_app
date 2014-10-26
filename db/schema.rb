@@ -19,21 +19,17 @@ ActiveRecord::Schema.define(version: 20141024191459) do
   create_table "cards", force: true do |t|
     t.string   "question"
     t.string   "answer"
-    t.integer  "stack_id_id"
+    t.integer  "stack_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  add_index "cards", ["stack_id_id"], name: "index_cards_on_stack_id_id", using: :btree
 
   create_table "stacks", force: true do |t|
     t.string   "category"
-    t.integer  "user_id_id"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  add_index "stacks", ["user_id_id"], name: "index_stacks_on_user_id_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "username"

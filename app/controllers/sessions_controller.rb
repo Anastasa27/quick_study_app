@@ -3,7 +3,8 @@ class SessionsController < ApplicationController
   end
 
   def create
-    user = User.find_by(username: params[:username])
+    user = User.where(:username => params[:password].downcase).first
+    # user = User.find_by(username: params[:username])
     if user && user.authenticate(params[:password])
       log_in(user)
       redirect_to(user_path(user))

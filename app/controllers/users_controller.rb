@@ -3,16 +3,18 @@ class UsersController < ApplicationController
   before_action :authenticate,            except: [:new, :create]
   before_action :load_user,               except: [:index, :new, :create]
   before_action :authorize_user_only,     only:   :show
+  before_action :authorize_user_or_admin, except: [:index, :show, :new, :create]
 
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
+    User.all.sort.reverse.reject {|user| user == current_user}
   end
 
   # GET /users/1
   # GET /users/1.json
   def show
+    @user = User.find(params[:id])
   end
 
   # GET /users/new
@@ -22,22 +24,25 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
+    @user = User.find(params[:id])
   end
 
   # POST /users
   # POST /users.json
   def create
     @user = User.new(user_params)
-
-    # respond_to do |format|
-    #   if @user.save
-    #     format.html { redirect_to @user, notice: 'User was successfully created.' }
-    #     format.json { render :show, status: :created, location: @user }
-    #   else
-    #     format.html { render :new }
-    #     format.json { render json: @user.errors, status: :unprocessable_entity }
-    #   end
-    # end
+    @user.save
+    user = User.find_by(username: user_params["username"])
+    id = user.id
+    respond_to do |format|
+      if @user.save
+        format.html { redirect_to @user, notice: 'User was successfully created.' }
+        format.json { render :show, status: :created, location: @user }
+      else
+        format.html { render :new }
+        format.json { render json: @user.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   # PATCH/PUT /users/1

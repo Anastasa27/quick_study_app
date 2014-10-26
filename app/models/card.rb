@@ -1,3 +1,5 @@
 class Card < ActiveRecord::Base
-  belongs_to :stack_id
+  belongs_to :stack
+  has_one :user, through: :stack
+
 end

@@ -6,9 +6,7 @@ Rails.application.routes.draw do
   resource  :session, only: [:create, :destroy]
 
 
-  resources :stacks do
-    resources :cards
-  end
+
 
   resources :users do
     member do
@@ -16,6 +14,10 @@ Rails.application.routes.draw do
       patch "password", action: "update_password"
       get   "confirm_delete"
     end
+  end
+
+  resources :stacks do
+    resources :cards
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

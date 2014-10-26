@@ -14,36 +14,100 @@
  *= require_self
  */
 
+.page-header {
+  font-size: 24px;
+  font-family: 'Nixie One', cursive;
+  color:rgb(117,117,117);
+}
+* {
+  -webkit-box-sizing: border-box;
+}
  body {
   font-family: 'Nixie One', cursive;
-  color:rgb(78,89,89);
+  color:rgb(117,117,117);
  }
 
 
-/*#flashcard-front {-webkit-box-shadow: 10px 11px 5px -8px rgba(0,0,0,0.75);
--moz-box-shadow: 10px 11px 5px -8px rgba(0,0,0,0.75);
-box-shadow: 10px 11px 5px -8px rgba(0,0,0,0.75);
-border-radius: 7px 7px 7px 7px;
--moz-border-radius: 7px 7px 7px 7px;
--webkit-border-radius: 7px 7px 7px 7px;
-border: 0px solid #C0C0C0;
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table;
+}
 
-}*/
+.clearfix:after {
+  clear: both;
+}
 
-/*#flashcard-back {-webkit-box-shadow: 10px 11px 5px -8px rgba(0,0,0,0.75);
--moz-box-shadow: 10px 11px 5px -8px rgba(0,0,0,0.75);
-box-shadow: 10px 11px 5px -8px rgba(0,0,0,0.75);
-border-radius: 7px 7px 7px 7px;
--moz-border-radius: 7px 7px 7px 7px;
--webkit-border-radius: 7px 7px 7px 7px;
-border: 0px solid #C0C0C0;
+.clearfix {
+  *zoom: 1;
+}
 
-}*/
+#splash-info {
+  float: left;
+  width: 50%;
+  margin-left: 10%;
+}
+
+#splash-sample {
+  float: left;
+  width: 40%;
+  margin-top: 2em;
+}
+
+#container {
+  width: 100%;
+  position: relative;
+}
+
+
+.page-header h1 {
+  margin-left: -4px;
+}
+
+.card {
+  position: relative;
+  transition: 0.6s;
+  transform-style: preserve-3d;
+  transform: rotateY(0deg);
+  height: 500px;
+  width: 350px;
+}
+
+.sample {
+  perspective: 1000;
+  height: 500px;
+  width: 350px;
+
+}
+
+#flashcard-back, #flashcard-front{
+  backface-visibility: hidden;
+  position: absolute;
+
+}
+
+#flashcard-front p{
+  margin-top: 8em;
+  font-family: 'Nixie One', cursive;
+  font-size: 28px;
+}
+
+#flashcard-back p{
+  line-height: 1;
+  margin-top: 6em;
+  font-family: 'Nixie One', cursive;
+  font-size: 28px;
+}
+.index{
+  z-index: 2;
+}
 
 #flashcard-back {
-color: rgb(255,214,103);
+-webkit-transform: rotateY(180deg);
+color: rgb(78,89,89);
+height: 500px;
 width: 350px;
-height: 250px;
+text-align: center;
 
 border: 1px #C0C0C0 solid;
 
@@ -57,9 +121,12 @@ box-shadow: 1px 1px 1px 0px #888888;
 }
 
 #flashcard-front {
-color:rgb(255, 255, 255 );
+-webkit-transform: rotateY(0deg);
+background-color: rgb(255,214,103);
 width: 350px;
-height: 250px;
+height: 500px;
+color: rgb(78,89,89);
+text-align: center;
 
 border: 1px #C0C0C0 solid;
 
