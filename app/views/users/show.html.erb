@@ -4,20 +4,20 @@
 <p id="notice"><%= notice %></p>
 <p><%= current_user %></p>
 <% if current_user %>
-  <div id="form-modal">
+  <div id="form-model">
     <div id="new-card-form">
       <input id="card-question-input" type="text" name="question" placeholder="question">
       <input id="card-answer-input" type="text" name="answer"placeholder="answer">
-      <button id="add-card">add a card</button>
+      <button id="add-card-button">add a card</button>
     </div>
   </div>
   <header>
   <h1 id="user-logged-in"><%= current_user.user_name %></h1>
   <%= link_to 'sign out', logout_path %>
   </header>
-  <div id="container">
+  <div id="card-container">
     <section id="stacks-list">
-      <h1>Lists</h1>
+      <h1>Stacks</h1>
       <span class="new-stack">+ new stack</span>
       <div id="new-stack-popup">
         <input id="new-stack-popup-input" type="text" placeholder="category">
@@ -25,12 +25,10 @@
       </div>
   <% current_user.stacks.each do |stack| %>
       <div class="stack" data-id="<%= stack.id %>">
-        <div class="triangle"></div>
         <div class="stack-name"><%= stack.name %></div>
         <div class="stack-quantity"> <%= stack.cards.count %> cards</div>
         <div class="stack-options">
           <span class="delete" id="delete-stack">delete</span>
-        </div>
       </div>
   <% end %>
     </section>
