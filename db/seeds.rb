@@ -8,7 +8,7 @@
 
 anastasia = User.create(username:'Anastasia', password:'2777')
 
-sample_stack = Stack.create(category:'Lost In Transaction')
+sample_stack = Stack.create(category:'Lost In Translation')
 
 card1 = Card.create(question:'Saudade(Portuguese)',answer:'the feeling of missing something you love while knowing that its likelihood of return is unknowable and entirely left to fate')
 
@@ -20,15 +20,15 @@ card4 = Card.create(question:'L’appel du vide(French)',answer:'“The call of 
 
 card5 = Card.create(question:'Wabi-Sabi(Japanese)',answer:'finding beauty within the imperfections of life and accepting peacefully the natural cycle of growth and decay')
 
-card6 = Card.create(question:'Tartle(Scottish)',answer:'The act of hesitating while introducing someone because you’ve forgotten their name')
+card6 = Card.create(question:'Tartle(Scottish)',answer:'the act of hesitating while introducing someone because you’ve forgotten their name')
 
-card7 = Card.create(question:'Jayus(Indonesian)',answer:'A joke so poorly told and so unfunny that one cannot help but laugh')
+card7 = Card.create(question:'Jayus(Indonesian)',answer:'a joke so poorly told and so unfunny that one cannot help but laugh')
 
-card8 = Card.create(question:'Mamihlapinatapei(Yagan)',answer:'The wordless, yet meaningful look shared by two people who both desire to initiate something but are both reluctant to start')
+card8 = Card.create(question:'Mamihlapinatapei(Yagan)',answer:'the wordless, yet meaningful look shared by two people who both desire to initiate something but are both reluctant to start')
 
-card9 = Card.create(question:'Duende(Spanish)',answer:'The mysterious power that a work of art has to deeply move a person')
+card9 = Card.create(question:'Duende(Spanish)',answer:'the mysterious power that a work of art has to deeply move a person')
 
-card10 = Card.create(question:'Gigil(Tagalog)',answer:'The urge to pinch or squeeze something that is unbearably cute')
+card10 = Card.create(question:'Gigil(Tagalog)',answer:'the urge to pinch or squeeze something that is unbearably cute')
 
 sample_stack.user_id = anastasia.id
 

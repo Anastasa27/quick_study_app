@@ -7,6 +7,7 @@ class UsersController < ApplicationController
    # GET /users/new
   def new
     @user = User.new
+    redirect_to(user_path(session[:user_id]))
   end
   # GET /users
   # GET /users.json
