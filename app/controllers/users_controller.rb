@@ -19,6 +19,9 @@ class UsersController < ApplicationController
   def stack
   end
 
+  def cards
+  end
+
   # GET /users/1
   # GET /users/1.json
   def show
