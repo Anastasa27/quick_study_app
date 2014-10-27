@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   # before_action :authenticate,            except: [:new, :create]
   before_action :load_user,               except: [:index, :new, :create]
   # before_action :authorize_user_only,     only:   :show
-  before_action :authorize_user_or_admin, except: [:index, :show, :new, :create]
+  # before_action :authorize_user_or_admin, except: [:index, :show, :new, :create]
    # GET /users/new
   def new
     @user = User.new
@@ -23,7 +23,7 @@ class UsersController < ApplicationController
   def show
     # binding.pry
     @user = User.find(params[:id])
-
+    @user.stacks.find(params[:id])
 
   end
 
@@ -98,19 +98,19 @@ class UsersController < ApplicationController
       redirect_to root_path if !@user
     end
 
-    def user_password_params
-      @user_password_params ||= params.require(:user).permit(
-        :old_password,
-        :password,
-        :password_confirmation
-      )
-    end
+    # def user_password_params
+    #   @user_password_params ||= params.require(:user).permit(
+    #     :old_password,
+    #     :password,
+    #     :password_confirmation
+    #   )
+    # end
 
-    def authorize_user_only
-      unless current_user == @user
-        redirect_to user_path(current_user)
-      end
-    end
+    # def authorize_user_only
+    #   unless current_user == @user
+    #     redirect_to user_path(current_user)
+    #   end
+    # end
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
       params.require(:user).permit(:username, :password_digest, :private)

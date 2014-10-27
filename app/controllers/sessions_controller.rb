@@ -1,20 +1,20 @@
 class SessionsController < ApplicationController
   def new
-
   end
 
   def create
-    user = User.find_by(user_name: params[:user_name])
+    @user = User.where(:username => params[:password].downcase).first
+    # user = User.find_by(username: params[:username])
     if user && user.authenticate(params[:password])
-      session[:current_user] = user.id
-      redirect_to user_path(user)
+      log_in(user)
+      redirect_to(user_path(@user))
     else
-      redirect_to sessions_path
+      flash[:error] = "Sorry, wrong username or password. Please try again."
+      redirect_to(login_path)
     end
   end
 
   def destroy
-    session[:current_user] = nil
-    redirect_to sessions_path
+    log_out!
   end
 end
