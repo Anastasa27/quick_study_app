@@ -2,7 +2,7 @@
   <h1>QuickStudy</h1>
 </div>
 
-<table>
+<!-- <table>
   <thead>
     <tr>
       <th>Stack</th>
@@ -24,7 +24,15 @@
       </tr>
     <% end %>
   </tbody>
-</table>
+</table> -->
+<script type="text/template" id="card-template">
+  <li data-completed="<%%= card.completed ? "true" : "false" %>">
+    <span class="question<%%= card.completed ? " completed" : "" %>">
+      <%%= card.question %></span>
+    <input type="checkbox"  <%%= card.completed ? "checked" : "" %>/>
+    <span class="remove">&times;</span>
+  </li>
+</script>
 
 <br>
 

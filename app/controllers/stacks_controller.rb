@@ -4,7 +4,8 @@ class StacksController < ApplicationController
   # GET /stacks
   # GET /stacks.json
   def index
-    @stacks = Stack.all
+    @cards = current_user.cards
+    render json: @cards
   end
 
   # GET /stacks/1
@@ -69,6 +70,6 @@ class StacksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def stack_params
-      params.require(:stack).permit(:category, :user_id_id)
+      params.require(:stack).permit(:category, :user_id)
     end
 end

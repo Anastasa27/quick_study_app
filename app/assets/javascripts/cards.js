@@ -5,6 +5,16 @@ console.log("modernizr linked");
 console.log("card.js linked");
 
 $(document).ready(function(){
+  $.ajax({
+    type: "GET",
+    dataType: "json",
+    url: "/stacks"
+  }).done(function(data){
+    $.each(data, function(idx, card){ var card = new Card(card)});
+  })
+})
+
+// $(document).ready(function(){
 
   function Card(data) {
     console.log('card model created', data);
@@ -17,8 +27,8 @@ $(document).ready(function(){
   Card.prototype.toggleCompleted = function(){
   console.log('-> model:toggleCompleted', this);
 
-  this.completed = !this.completed; // update model!
-  this.update(); // persist!
+  this.completed = !this.completed;
+  this.update();
 }
 
   Card.prototype.create = function() {
@@ -27,16 +37,15 @@ $(document).ready(function(){
     url:      "/cards",
     type:     "POST",
     dataType: "json",
-    context:  this, // this sets context in done to the object
+    context:  this,
     data: {
-      task: { // nested for rails strong params (white-listing)!
-        question: this.question,
-        answer: this.answer,
+      task: {
+        question:    this.question,
+        answer:      this.answer,
         completed:   this.completed
       }
     }
   }).done(function(data){
-    // give the model the data from the server (id, etc.)
     this.id        = data.id;
     this.completed = data.completed;
     console.log('!(AJAX) model:create complete', data, this);
@@ -49,11 +58,11 @@ Card.prototype.update = function() {
     url:      "/cards/" + this.id,
     type:     "PATCH",
     dataType: "json",
-    context:  this, // this sets context in done to the object
+    context:  this,
     data: {
-      task: { // nested for rails strong params (white-listing)!
-        question: this.question,
-        answer: this.answer,
+      task: {
+        question:    this.question,
+        answer:      this.answer,
         completed:   this.completed
       }
     }
@@ -68,7 +77,7 @@ Card.prototype.destroy = function(){
     url:      "/cards/" + this.id,
     type:     "DELETE",
     dataType: "json",
-    context:  this // this sets context in done to the object
+    context:  this
   }).done(function(data){
     console.log('!(AJAX) model:destroy complete', data, this);
   });
@@ -76,5 +85,7 @@ Card.prototype.destroy = function(){
 
 
 
-});
+
+
+// });
 

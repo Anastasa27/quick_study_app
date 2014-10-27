@@ -3,26 +3,23 @@ console.log("modernizr linked");
 console.log("card_view.js linked");
 console.log("underscore.js linked");
 
-$(document).ready(function(){
+// $(document).ready(function(){
   function cardView(model, el){
   console.log('view created with model:', model);
 
   this.$el   = (el !== undefined) ? $(el) : undefined;
   this.model = model;
 
-  // attach the view to the model so that it can message the view!
-  // model.view = this; // all changes are triggered from the client, ie
-                        // via the view, so this isn't necessary -- but if
-                        // the server was making changes, then we may need
-                        // to trigger events from the model on the view...
+
 }
 
 cardView.prototype = {
-  template: _.template($("#task-template").html()),
+  template: _.template($("#card-template").html()),
+
 
   render: function() {
     console.log('  view:render', this);
-    var temp = this.template({task: this.model});
+    var temp = this.template({card: this.model});
     this.$el = $(temp); // reset el
 
     return this; // for chaining!
@@ -76,7 +73,7 @@ cardView.prototype = {
   }
 };
 
-});
+// });
 
 
 
