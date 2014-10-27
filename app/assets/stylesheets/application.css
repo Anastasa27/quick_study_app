@@ -14,12 +14,38 @@
  *= require_self
  */
 
+@media(min-width:768px) {
+  body {
+    padding: 25px 0; border: 0;
+    -webkit-transition: padding .3s;
+    -moz-transition: padding .3s;
+    transition: padding .3s;
+  }
+}
+
+
+@media(min-width:768px) {
+ header  {
+  padding-top: 200px; padding-bottom: 200px;
+  }
+}
+
+
+@media(min-width:768px) {
+  section {
+    padding: 150px 0;
+    }
+  }
+
+
+
+
 
 .page-header {
   font-weight: bolder;
   font-size: 24px;
   font-family: 'Nixie One', cursive;
-  color:rgb(117,117,117);
+  color: rgb(117,117,117);
 
 }
 
@@ -168,6 +194,12 @@ box-shadow: 1px 1px 1px 0px #888888;
 }
 
 
-
+ a{
+  padding:.5em1em;
+  border: 1pxsolidrgba(0,0,0,0.4);
+  text-decoration: none;
+  color: rgb(117,117,117);
+  transition: allease.5s;
+}
 
 
