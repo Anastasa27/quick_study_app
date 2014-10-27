@@ -4,7 +4,9 @@ class CardsController < ApplicationController
   # GET /cards
   # GET /cards.json
   def index
+    # binding.pry
     @cards = Card.all
+    render :cards
   end
 
   # GET /cards/1
