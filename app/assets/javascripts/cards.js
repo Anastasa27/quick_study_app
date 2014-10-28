@@ -4,11 +4,12 @@ console.log("jquery linked");
 console.log("modernizr linked");
 console.log("card.js linked");
 
+
 $(document).ready(function(){
   $.ajax({
     type: "GET",
     dataType: "json",
-    url: "/stacks"
+    url: "/cards"
   }).done(function(data){
     $.each(data, function(idx, card){ var card = new Card(card)});
   })

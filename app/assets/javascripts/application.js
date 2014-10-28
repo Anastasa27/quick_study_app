@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require stack_view
 //= require card_view
 //= require_tree .
 

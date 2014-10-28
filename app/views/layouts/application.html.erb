@@ -13,19 +13,36 @@
 <body>
 
 <%= yield %>
+
 <script>
   function flip() {
+    console.log('FLIPPED');
     if ($('.card').hasClass("flipped")) {
       $('.card').css("transform", "rotateY(0deg)").toggleClass("flipped");
       }
       else {
         $('.card').css("transform", "rotateY(180deg)").addClass("flipped");
       }
-
     }
-    $('.sample').on("click", flip);
-
-
+  $('.sample').on("click", flip);
 </script>
+
+<script type="text/template" id="stack-template">
+  <li>
+    <span><%%= stack.category %></span>
+    <input type="checkbox"  <%%= stack.completed ? "checked" : "" %>/>
+    <span class="remove">&times;</span>
+  </li>
+</script>
+
+<script type="text/template" id="card-template">
+  <li>
+    <span><%%= card.question %></span>
+    <span><%%= card.answer %></span>
+    <input type="checkbox"  <%%= card.completed ? "checked" : "" %>/>
+    <span class="remove">&times;</span>
+  </li>
+</script>
+
 </body>
 </html>
