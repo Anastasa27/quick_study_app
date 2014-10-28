@@ -29,7 +29,7 @@ class CardsController < ApplicationController
   # POST /cards
   # POST /cards.json
   def create
-    @card = Card.create(card_params)
+    @card = Card.new(card_params)
     render json: @card
     # respond_to do |format|
     #   if @card.save

@@ -38,7 +38,9 @@
   }
 
 
-
+#list-stacks {
+  list-style: none;
+}
 
 
 .page-header {

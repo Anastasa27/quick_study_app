@@ -14,14 +14,14 @@ $(document).ready(function(){
     $.each(data, function(idx, item){
       var stack = new Stack(item);
       var sView = new StackView(stack);
-      sView.render;
+      sView.init();
     });
   })
 })
 
 
 function Stack(data) {
-  console.log('stack model created', data);
+  console.log('card model created', data);
   this.id          = data.id;
   this.category    = data.category;
 }

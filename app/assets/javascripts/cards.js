@@ -11,9 +11,12 @@ $(document).ready(function(){
     dataType: "json",
     url: "/cards"
   }).done(function(data){
-    $.each(data, function(idx, card){ var card = new Card(card)});
-  })
-})
+    $.each(data, function(idx, item){
+    var card = new Card(item);
+      var cView = new CardView(card);
+      cView.init();
+  });
+});
 
 
 
@@ -24,7 +27,7 @@ $(document).ready(function(){
     this.answer      = data.answer;
   }
 
-
+});
 
   Card.prototype.create = function() {
   console.log('!(AJAX) model:create initiated', this);
@@ -44,7 +47,7 @@ $(document).ready(function(){
     this.id        = data.id;
     console.log('!(AJAX) model:create complete', data, this);
   });
-}
+};
 
 Card.prototype.update = function() {
   console.log('!(AJAX) model:update initiated');
@@ -62,7 +65,7 @@ Card.prototype.update = function() {
   }).done(function(data){
     console.log('!(AJAX) model:update complete', data, this);
   });
-}
+};
 
 Card.prototype.destroy = function(){
   console.log('!(AJAX) model:destroy initiated');
@@ -74,7 +77,7 @@ Card.prototype.destroy = function(){
   }).done(function(data){
     console.log('!(AJAX) model:destroy complete', data, this);
   });
-}
+};
 
 
 

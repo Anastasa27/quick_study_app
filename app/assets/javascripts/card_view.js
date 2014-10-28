@@ -33,15 +33,16 @@ CardView.prototype = {
     if (!this.$el) {
       // build the element and then add to the DOM
       view.render();
-      $("#cards").append(view.$el);
+     $("#flashcard-front").append(view.$el);
       console.log('    (building element)', this.$el);
     } else {
       console.log('    (hooking element)', this.$el);
     }
 
+    // $('#flashcard-front').append(cardView.$el);
     // attach event listeners, et al
 
-    view.$el.on("click", "span.remove", view, view.remove);
+    // view.$el.on("click", "span.remove", view, view.remove);
 
     return this; // for chaining!
   },

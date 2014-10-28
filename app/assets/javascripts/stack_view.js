@@ -19,28 +19,28 @@ StackView.prototype = {
     console.log('  view:render', this);
     var temp = this.template({stack: this.model});
     this.$el = $(temp);
-    $('list-stacks').append(this.$el);
+
     return this;
   },
 
   init: function() {
     console.log('  view:init', this);
     var view = this; // make it more semantic below...
-    // debugger
     // if the element is NOT on the DOM, ie it was NOT passed
     //   in the constructor
+    // debugger
     if (!this.$el) {
       // build the element and then add to the DOM
       view.render();
-      $("#stacks").append(view.$el);
+      $("#list-stacks").append(view.$el);
       console.log('    (building element)', this.$el);
     } else {
       console.log('    (hooking element)', this.$el);
     }
 
     // attach event listeners, et al
-    view.$el.on("click", "input",       view, view.toggleCompleted);
-    view.$el.on("click", "span.remove", view, view.remove);
+    // view.$el.on("click", "input",       view, view.toggleCompleted);
+    // view.$el.on("click", "span.remove", view, view.remove);
 
     return this; // for chaining!
   },
