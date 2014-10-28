@@ -4,6 +4,7 @@ console.log("jquery linked");
 console.log("modernizr linked");
 console.log("card.js linked");
 
+cards = [];
 
 $(document).ready(function(){
   $.ajax({
@@ -13,8 +14,9 @@ $(document).ready(function(){
   }).done(function(data){
     $.each(data, function(idx, item){
     var card = new Card(item);
-      var cView = new CardView(card);
+    var cView = new CardView(card);
       cView.init();
+      cards.push(data);
   });
 });
 
@@ -37,7 +39,7 @@ $(document).ready(function(){
     dataType: "json",
     context:  this,
     data: {
-      task: {
+      card: {
         question:    this.question,
         answer:      this.answer,
 

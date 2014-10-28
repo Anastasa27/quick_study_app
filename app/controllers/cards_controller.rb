@@ -5,7 +5,7 @@ class CardsController < ApplicationController
   # GET /cards.json
   def index
     # binding.pry
-    @cards = current_user.cards
+    # @cards = @user.cards
     render json: @cards
     # @cards = Card.all.sort_by {|card| card.created_at}
     # render :index

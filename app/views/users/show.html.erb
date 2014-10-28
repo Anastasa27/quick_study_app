@@ -2,30 +2,50 @@
   <div id="splash-info">
     <div class="page-header">
       <h1>QuickStudy</h1>
-    </div>
-      <p id="notice"><%= notice %></p>
-      <p id="welcome-user">Welcome, <%= @user[:username] %></p>
-        <div id="breadcrumbs">
-           <%= link_to 'Create a Stack', new_stack_path %> |
-          <%= link_to 'Edit Profile', edit_user_path(@user) %> |
-          <%= link_to("Logout", session_path, method: :delete) %>
         </div>
-      <div id="list-stacks"></div>
-    </div>
-  <div id="splash-sample">
-    <div class="sample">
-      <div class="card">
-        <div class="index" id="flashcard-front">
-          <!-- <div id="stack-name"><%= @user.stacks.find(params[:id]).category %></div> -->
-          <!-- <p id="question-text"><%= @user.cards.find(params[:id]).question %></p> -->
-        </div>
-        <div id="flashcard-back">
-          <!-- <p id="answer-text"><%= @user.cards.find(params[:id]).answer %></p> -->
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+          <p id="notice"><%= notice %></p>
+            <p id="welcome-user">Welcome, <%= @user[:username] %></p>
+              <div id="breadcrumbs">
+                <%= link_to 'Create a Stack', new_stack_path %> |
+                <%= link_to 'Edit Profile', edit_user_path(@user) %> |
+                <%= link_to("Logout", session_path, method: :delete) %>
+              </div>
+                  <div id="list-stacks"></div>
+              </div>
+                    <div id="splash-sample">
+                      <div class="sample">
+                        <div class="card">
+                          <div class="index" id="flashcard-front">
+                            <script type="text/template" id="stack-template">
+                              <br>
+                                <li>
+                                  <p id="stack-list-text"><%%= stack.category %></p>
+                                </li>
+                            </script>
+
+                            <script type="text/template" id="card-template">
+                              <div>
+                                <div id="card-front-text">
+                                  <ul>
+                                    <li><%%= card.question %></li>
+                                  </ul>
+                                </div>
+                                  <div id="card-back-text">
+                                    <ul>
+                                      <li><%%= card.answer %></li>
+                                    </ul>
+                                  </div>
+
+                            </script>
+
+
+                          </div>
+                        <div id="flashcard-back">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
 
 

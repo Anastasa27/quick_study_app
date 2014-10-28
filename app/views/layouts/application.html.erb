@@ -4,28 +4,13 @@
   <title>QuickStudyApp</title>
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <link href='http://fonts.googleapis.com/css?family=Nixie+One' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Josefin+Sans' rel='stylesheet' type='text/css'>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
 <%= yield %>
 
-
-
-<script type="text/template" id="stack-template">
-
-<br>
-  <li>
-    <span><%%= stack.category %></span>
-  </li>
-</script>
-
-<script type="text/template" id="card-template">
-  <li>
-    <span><%%= card.question %></span>
-    <span><%%= card.answer %></span>
-  </li>
-</script>
 
   <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
   <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -41,7 +26,6 @@ function flip() {
       else {
         $('.card').css("transform", "rotateY(180deg)").addClass("flipped");
       }
-
 
     }
   $('.sample').on("click", flip);

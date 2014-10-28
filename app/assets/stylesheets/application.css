@@ -13,7 +13,7 @@
  *= require_tree .
  *= require_self
  */
-
+/*
 @media(min-width:768px) {
   body {
     padding: 25px 0; border: 0;
@@ -36,11 +36,12 @@
     padding: 150px 0;
     }
   }
-
+*/
 
 #list-stacks {
   list-style: none;
 }
+
 
 
 .page-header {
@@ -52,16 +53,17 @@
 }
 
 #welcome-user {
-  font-family: 'Nixie One', cursive;
+  font-family: 'Josefin Sans', sans-serif;
   color:rgb(117,117,117);
   font-size: 14px;
 }
 
-* {
+/** {
   -webkit-box-sizing: border-box;
-}
+}*/
  body {
-  font-family: 'Nixie One', cursive;
+  font-family: 'Josefin Sans', sans-serif;
+  /*font-family: 'Nixie One', cursive;*/
   color:rgb(117,117,117);
  }
 
@@ -127,6 +129,19 @@
   list-style: none;
 }
 
+#card-front-text {
+  font-family: 'Nixie One', cursive;
+  font-size: 28px;
+  list-style: none;
+}
+
+#card-back-text {
+  font-family: 'Nixie One', cursive;
+  font-size: 28px;
+  list-style: none;
+
+}
+
 #stack-name  {
   font-size: 16px;
   margin-right: 12em;
@@ -162,6 +177,7 @@ height: 500px;
 width: 350px;
 text-align: center;
 list-style: none;
+font-family: 'Nixie One', cursive;
 
 border: 1px #C0C0C0 solid;
 
@@ -182,7 +198,7 @@ height: 500px;
 color: rgb(78,89,89);
 text-align: center;
 list-style: none;
-
+font-family: 'Nixie One', cursive;
 border: 1px #C0C0C0 solid;
 
 -webkit-border-radius: 7px;
@@ -201,11 +217,15 @@ box-shadow: 1px 1px 1px 0px #888888;
   list-style: none;
 }
 
+#stack-list-text {
+  font-family: 'Josefin Sans', sans-serif;
+}
 
  a{
   padding:.5em1em;
   border: 1pxsolidrgba(0,0,0,0.4);
   text-decoration: none;
+  font-family: 'Josefin Sans', sans-serif;
   color: rgb(117,117,117);
   transition: allease.5s;
 }
