@@ -1,15 +1,10 @@
-console.log("jquery linked");
-console.log("modernizr linked");
-console.log("card_view.js linked");
-console.log("underscore.js linked");
+console.log('stack_view.js linked');
 
 function StackView(model, el){
   console.log('view created with model:', model);
 
   this.$el   = (el !== undefined) ? $(el) : undefined;
   this.model = model;
-
-
 }
 
 StackView.prototype = {

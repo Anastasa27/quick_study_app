@@ -6,31 +6,15 @@
   <link href='http://fonts.googleapis.com/css?family=Nixie+One' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Josefin+Sans' rel='stylesheet' type='text/css'>
   <%= csrf_meta_tags %>
-</head>
-<body>
-
-<%= yield %>
-
-
   <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
   <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore-min.js"></script>
+
+</head>
+<body>
+
+  <%= yield %>
+
   <%= javascript_include_tag 'application' %>
-
-  <script>
-function flip() {
-    console.log('FLIPPED');
-    if ($('.card').hasClass("flipped")) {
-      $('.card').css("transform", "rotateY(0deg)").toggleClass("flipped");
-      }
-      else {
-        $('.card').css("transform", "rotateY(180deg)").addClass("flipped");
-      }
-
-    }
-  $('.sample').on("click", flip);
-
-</script>
-
 </body>
 </html>

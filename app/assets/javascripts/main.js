@@ -2,12 +2,48 @@ console.log('main.js linked');
 if($ !== undefined) { console.log('  jQuery library loaded!');     }
 if(_ !== undefined) { console.log('  Underscore library loaded!'); }
 
-
-var quickStudyApp       = {};
+var cards;
+var quickStudyApp        = {};
 quickStudyApp.stackNum   = 0;
 quickStudyApp.stackViews = {};
-quickStudyApp.cardViews = {};
-quickStudyApp.cardNum = 0;
+quickStudyApp.cardViews  = {};
+quickStudyApp.cardNum    = 0;
+quickStudyApp.totalCards;
+quickStudyApp.showing    = 'front';
+
+function flip() {
+  if ($('.card').hasClass("flipped")) {
+    $('.card').css("transform", "rotateY(0deg)").toggleClass("flipped");
+  } else {
+    $('.card').css("transform", "rotateY(180deg)").addClass("flipped");
+  }
+}
+
+function switchCard() {
+  if (quickStudyApp.showing == 'back') {
+    if (quickStudyApp.cardNum < quickStudyApp.totalCards - 1) {
+      quickStudyApp.cardNum++;
+    } else {
+      quickStudyApp.cardNum = 0;
+    }
+    showCard();
+    quickStudyApp.showing = 'front';
+  } else {
+    quickStudyApp.showing = 'back';
+  }
+}
+
+function showCard(first) {
+  // debugger
+  $(quickStudyApp.$cardFronts[quickStudyApp.cardNum]).removeClass('hidden');
+  $(quickStudyApp.$cardBacks[quickStudyApp.cardNum]).removeClass('hidden');
+
+  if (!first) {
+    $(quickStudyApp.$cardFronts[quickStudyApp.cardNum - 1]).addClass('hidden');
+    $(quickStudyApp.$cardBacks[quickStudyApp.cardNum - 1]).addClass('hidden');
+  }
+}
+
 
 quickStudyApp.pushView = function(newView) {
 
@@ -16,7 +52,7 @@ quickStudyApp.pushView = function(newView) {
   quickStudyApp.stackViews[viewId] = newView; // add our view to the global list of
                                        //   views with a "unique" ID
 
-}
+};
 
 quickStudyApp.pushViewC = function(newView) {
 
@@ -25,7 +61,7 @@ quickStudyApp.pushViewC = function(newView) {
   quickStudyApp.cardViews[viewIdC] = newViewC; // add our view to the global list of
                                        //   views with a "unique" ID
 
-}
+};
 
 
 quickStudyApp.createStack = function(data, el) {
@@ -37,10 +73,11 @@ quickStudyApp.createStack = function(data, el) {
 
   quickStudyApp.pushView(stackView);
   return stack; // return the model for chaining!
-}
+};
 
 quickStudyApp.createCard = function(data, el) {
   var card     = new Card(data);
+  // debugger
   var cardView = new CardView(card, el).init();
 
  // $('#flashcard-front').append(cardView.$el);
@@ -49,7 +86,7 @@ quickStudyApp.createCard = function(data, el) {
 
   quickStudyApp.pushViewC(cardView);
   return card; // return the model for chaining!
-}
+};
 
 // NOT doing the below b/c we are loading the page WITH the
 //   current state of the DB!
@@ -81,10 +118,48 @@ $(function(){
     // event.preventDefault();
     var stackDescription = quickStudyApp.$inputField.val();
     quickStudyApp.$inputField.val(''); // reset the input
-    quickStudyApp.createStack({ description: stackDescription })
-           .create(); // call create on the model that is returned (see above)
+    quickStudyApp.createStack({ description: stackDescription });
+           // .create(); // call create on the model that is returned (see above)
   });
 
+  $('.sample').on("click", flip);
+  $('.sample').on("click", switchCard);
+
+  cards = [];
+
+  $.ajax({
+    type: "GET",
+    dataType: "json",
+    url: "/cards"
+  }).done(function(data){
+    quickStudyApp.totalCards = data.length;
+    $.each(data, function(idx, item){
+      var card = new Card(item);
+      var cView = new CardView(card);
+      cView.init();
+      cards.push(data);
+    });
+    // now that they are on the DOM, cache a reference to them
+    quickStudyApp.$cardFronts = $('.card-front-text');
+    quickStudyApp.$cardBacks  = $('.card-back-text');
+    showCard(true);
+  });
+
+  $.ajax({
+    type: "GET",
+    dataType: "json",
+    url: "/stacks"
+  }).done(function(data){
+    $.each(data, function(idx, item){
+      var stack = new Stack(item);
+      var sView = new StackView(stack);
+      sView.init();
+    });
+  });
+
+
+
+  // showCard();
    // var cardDescription = quickStudyApp.$inputField.val();
    //  quickStudyApp.$inputField.val(''); // reset the input
    //  quickStudyApp.createCard({ description: cardDescription })

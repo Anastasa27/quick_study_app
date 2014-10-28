@@ -1,37 +1,16 @@
 // Place all the behaviors and hooks related to the matching controller here.
 // All this logic will automatically be available in application.js.
-console.log("jquery linked");
-console.log("modernizr linked");
-console.log("card.js linked");
-
-cards = [];
-
-$(document).ready(function(){
-  $.ajax({
-    type: "GET",
-    dataType: "json",
-    url: "/cards"
-  }).done(function(data){
-    $.each(data, function(idx, item){
-    var card = new Card(item);
-    var cView = new CardView(card);
-      cView.init();
-      cards.push(data);
-  });
-});
+console.log("cards.js linked");
 
 
+function Card(data) {
+  console.log('card model created', data);
+  this.id          = data.id;
+  this.question    = data.question;
+  this.answer      = data.answer;
+}
 
-  function Card(data) {
-    console.log('card model created', data);
-    this.id          = data.id;
-    this.question    = data.question;
-    this.answer      = data.answer;
-  }
-
-});
-
-  Card.prototype.create = function() {
+Card.prototype.create = function() {
   console.log('!(AJAX) model:create initiated', this);
   $.ajax({
     url:      "/cards",

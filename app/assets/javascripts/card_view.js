@@ -1,10 +1,7 @@
-console.log("jquery linked");
-console.log("modernizr linked");
 console.log("card_view.js linked");
-console.log("underscore.js linked");
 
 // $(document).ready(function(){
-  function CardView(model, el){
+function CardView(model, el){
   console.log('view created with model:', model);
 
   this.$el   = (el !== undefined) ? $(el) : undefined;
@@ -14,13 +11,19 @@ console.log("underscore.js linked");
 }
 
 CardView.prototype = {
-  template: _.template($("#card-template").html()),
+  frontTemplate: _.template($("#card-front-template").html()),
+  backTemplate:  _.template($("#card-back-template").html()),
 
 
   render: function() {
     console.log('  view:render', this);
-    var temp = this.template({card: this.model});
-    this.$el = $(temp);
+    var front = this.frontTemplate({card: this.model});
+    var back  = this.backTemplate( {card: this.model});
+
+    // debugger
+
+    this.$el.find(".flashcard-front").append(front);
+    this.$el.find(".flashcard-back").append(back);
 
     return this;
   },
@@ -31,12 +34,13 @@ CardView.prototype = {
     // debugger
 
     if (!this.$el) {
+      this.$el = $("#flashcard");
       // build the element and then add to the DOM
       view.render();
       // var card = document.createElement('div', 'card-text');
       // for(var i = 0, len = card.length; i < len; i++){
-     $("#flashcard-front").append(this.model.question);
-     $("#flashcard-back").append(this.model.answer);
+     // $("#flashcard-front").append(this.model.question);
+     // $("#flashcard-back").append(this.model.answer);
       console.log('    (building element)', this.$el);
     } else {
       console.log('    (hooking element)', this.$el);

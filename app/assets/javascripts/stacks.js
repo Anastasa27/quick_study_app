@@ -1,24 +1,6 @@
 // Place all the behaviors and hooks related to the matching controller here.
 // All this logic will automatically be available in application.js.
-console.log("jquery linked");
-console.log("modernizr linked");
-console.log("card.js linked");
-
-
-$(document).ready(function(){
-  $.ajax({
-    type: "GET",
-    dataType: "json",
-    url: "/stacks"
-  }).done(function(data){
-    $.each(data, function(idx, item){
-      var stack = new Stack(item);
-      var sView = new StackView(stack);
-      sView.init();
-    });
-  })
-})
-
+console.log('stacks.js linked');
 
 function Stack(data) {
   console.log('card model created', data);

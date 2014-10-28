@@ -13,7 +13,7 @@
  *= require_tree .
  *= require_self
  */
-/*
+
 @media(min-width:768px) {
   body {
     padding: 25px 0; border: 0;
@@ -36,7 +36,7 @@
     padding: 150px 0;
     }
   }
-*/
+
 
 #list-stacks {
   list-style: none;
@@ -122,24 +122,27 @@
 
 }
 
-#flashcard-front p{
+.flashcard-front p{
   margin-top: 8em;
   font-family: 'Nixie One', cursive;
   font-size: 28px;
   list-style: none;
 }
 
-#card-front-text {
+.card-front-text {
   font-family: 'Nixie One', cursive;
   font-size: 28px;
   list-style: none;
 }
 
-#card-back-text {
+.card-back-text {
   font-family: 'Nixie One', cursive;
   font-size: 28px;
   list-style: none;
+}
 
+.hidden {
+  display: none;
 }
 
 #stack-name  {
@@ -150,7 +153,7 @@
   font-family: 'Nixie One', cursive;
 }
 
-#flashcard-back, #flashcard-front{
+.flashcard-back, .flashcard-front{
   backface-visibility: hidden;
   position: absolute;
 
@@ -159,7 +162,7 @@
 
 
 
-#answer-text, #flashcard-back p{
+#answer-text, .flashcard-back p{
   line-height: 1;
   margin-top: 6em;
   font-family: 'Nixie One', cursive;
@@ -170,7 +173,7 @@
   z-index: 2;
 }
 
-#flashcard-back {
+.flashcard-back {
 -webkit-transform: rotateY(180deg);
 color: rgb(78,89,89);
 height: 500px;
@@ -190,7 +193,7 @@ border-radius: 7px;
 box-shadow: 1px 1px 1px 0px #888888;
 }
 
-#flashcard-front {
+.flashcard-front {
 -webkit-transform: rotateY(0deg);
 background-color: rgb(255,214,103);
 width: 350px;
