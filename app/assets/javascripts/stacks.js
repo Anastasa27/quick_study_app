@@ -14,7 +14,7 @@ $(document).ready(function(){
     $.each(data, function(idx, item){
       var stack = new Stack(item);
       var sView = new StackView(stack);
-      sView.render();
+      sView.render;
     });
   })
 })
@@ -36,12 +36,10 @@ Stack.prototype.create = function() {
     data: {
       task: {
         category:    this.category,
-        completed:   this.completed
       }
     }
   }).done(function(data){
     this.id        = data.id;
-    this.completed = data.completed;
     console.log('!(AJAX) model:create complete', data, this);
   });
 }
@@ -56,7 +54,6 @@ Stack.prototype.update = function() {
     data: {
       task: {
         category:    this.category,
-        completed:   this.completed
       }
     }
   }).done(function(data){

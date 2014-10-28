@@ -15,9 +15,7 @@ function StackView(model, el){
 StackView.prototype = {
   template: _.template($("#stack-template").html()),
 
-
   render: function() {
-    debugger;
     console.log('  view:render', this);
     var temp = this.template({stack: this.model});
     this.$el = $(temp);
@@ -48,16 +46,16 @@ StackView.prototype = {
     return this; // for chaining!
   },
 
-  toggleCompleted: function(event) {
-    console.log('-> view:toggleCompleted', event.data);
+  // toggleCompleted: function(event) {
+  //   console.log('-> view:toggleCompleted', event.data);
 
-    // this is the DOM node
-    // event.data refers to the view instance (set in the handler above)
-    event.data.$el.find("span.description").toggleClass('completed');
+  //   // this is the DOM node
+  //   // event.data refers to the view instance (set in the handler above)
+  //   event.data.$el.find("span.description").toggleClass('completed');
 
-    // message the model
-    event.data.model.toggleCompleted();
-  },
+  //   // message the model
+  //   event.data.model.toggleCompleted();
+  // },
 
   remove: function(event) {
     console.log('-> view:remove', event.data);

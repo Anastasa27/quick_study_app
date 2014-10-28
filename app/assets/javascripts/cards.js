@@ -15,12 +15,11 @@ $(document).ready(function(){
   })
 })
 
-// $(document).ready(function(){
+
 
   function Card(data) {
     console.log('card model created', data);
     this.id          = data.id;
-    this.completed   = data.completed;
     this.question    = data.question;
     this.answer      = data.answer;
   }
@@ -48,7 +47,6 @@ $(document).ready(function(){
     }
   }).done(function(data){
     this.id        = data.id;
-    this.completed = data.completed;
     console.log('!(AJAX) model:create complete', data, this);
   });
 }
@@ -64,7 +62,6 @@ Card.prototype.update = function() {
       task: {
         question:    this.question,
         answer:      this.answer,
-        completed:   this.completed
       }
     }
   }).done(function(data){
@@ -88,5 +85,5 @@ Card.prototype.destroy = function(){
 
 
 
-// });
+
 

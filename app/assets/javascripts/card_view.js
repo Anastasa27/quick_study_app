@@ -4,7 +4,7 @@ console.log("card_view.js linked");
 console.log("underscore.js linked");
 
 // $(document).ready(function(){
-  function cardView(model, el){
+  function CardView(model, el){
   console.log('view created with model:', model);
 
   this.$el   = (el !== undefined) ? $(el) : undefined;
@@ -13,7 +13,7 @@ console.log("underscore.js linked");
 
 }
 
-cardView.prototype = {
+CardView.prototype = {
   template: _.template($("#card-template").html()),
 
 
