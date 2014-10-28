@@ -24,12 +24,7 @@ $(document).ready(function(){
     this.answer      = data.answer;
   }
 
-  Card.prototype.toggleCompleted = function(){
-  console.log('-> model:toggleCompleted', this);
 
-  this.completed = !this.completed;
-  this.update();
-}
 
   Card.prototype.create = function() {
   console.log('!(AJAX) model:create initiated', this);
@@ -42,7 +37,7 @@ $(document).ready(function(){
       task: {
         question:    this.question,
         answer:      this.answer,
-        completed:   this.completed
+
       }
     }
   }).done(function(data){

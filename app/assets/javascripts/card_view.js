@@ -20,17 +20,16 @@ CardView.prototype = {
   render: function() {
     console.log('  view:render', this);
     var temp = this.template({card: this.model});
-    this.$el = $(temp); // reset el
+    this.$el = $(temp);
 
-    return this; // for chaining!
+    return this;
   },
 
   init: function() {
     console.log('  view:init', this);
-    var view = this; // make it more semantic below...
+    var view = this;
     // debugger
-    // if the element is NOT on the DOM, ie it was NOT passed
-    //   in the constructor
+
     if (!this.$el) {
       // build the element and then add to the DOM
       view.render();
@@ -41,22 +40,13 @@ CardView.prototype = {
     }
 
     // attach event listeners, et al
-    view.$el.on("click", "input",       view, view.toggleCompleted);
+
     view.$el.on("click", "span.remove", view, view.remove);
 
     return this; // for chaining!
   },
 
-  toggleCompleted: function(event) {
-    console.log('-> view:toggleCompleted', event.data);
 
-    // this is the DOM node
-    // event.data refers to the view instance (set in the handler above)
-    event.data.$el.find("span.description").toggleClass('completed');
-
-    // message the model
-    event.data.model.toggleCompleted();
-  },
 
   remove: function(event) {
     console.log('-> view:remove', event.data);

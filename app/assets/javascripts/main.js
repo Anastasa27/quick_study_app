@@ -3,14 +3,12 @@ if($ !== undefined) { console.log('  jQuery library loaded!');     }
 if(_ !== undefined) { console.log('  Underscore library loaded!'); }
 
 
-var quickStudyApp       = {}; // create a global namespace
+var quickStudyApp       = {};
 quickStudyApp.stackNum   = 0;
-quickStudyApp.stackViews = {}; // this is the global variable to hold our tasks
-                        // we hold a reference to our views, bc they in turn
-                        // reference our models, via view.model
+quickStudyApp.stackViews = {};
 
 quickStudyApp.pushView = function(newView) {
-  // remember redis? :)
+
   var viewId = quickStudyApp.stackNum; quickStudyApp.stackNum++; // increment counter
   newView.viewId = viewId; // give that ID to the view, so it can remove itself
   quickStudyApp.stackViews[viewId] = newView; // add our view to the global list of
@@ -45,7 +43,7 @@ console.log("1. application initialized...", quickStudyApp);
 $(function(){
   console.log('2. page (DOM) loaded: now running onload...');
 
-  // caches references to repeatedly need DOM nodes
+
   quickStudyApp.$body         = $("body");
   quickStudyApp.$inputField   = $("input");
   quickStudyApp.$submitButton = $("button");
