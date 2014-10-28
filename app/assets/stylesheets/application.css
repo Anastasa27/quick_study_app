@@ -124,6 +124,7 @@
   margin-top: 8em;
   font-family: 'Nixie One', cursive;
   font-size: 28px;
+  list-style: none;
 }
 
 #stack-name  {
@@ -138,6 +139,7 @@
   backface-visibility: hidden;
   position: absolute;
 
+
 }
 
 
@@ -147,6 +149,7 @@
   margin-top: 6em;
   font-family: 'Nixie One', cursive;
   font-size: 28px;
+  list-style: none;
 }
 .index{
   z-index: 2;
@@ -158,6 +161,7 @@ color: rgb(78,89,89);
 height: 500px;
 width: 350px;
 text-align: center;
+list-style: none;
 
 border: 1px #C0C0C0 solid;
 
@@ -177,6 +181,7 @@ width: 350px;
 height: 500px;
 color: rgb(78,89,89);
 text-align: center;
+list-style: none;
 
 border: 1px #C0C0C0 solid;
 
@@ -193,6 +198,7 @@ box-shadow: 1px 1px 1px 0px #888888;
   margin-top: 8em;
   font-family: 'Nixie One', cursive;
   font-size: 28px;
+  list-style: none;
 }
 
 

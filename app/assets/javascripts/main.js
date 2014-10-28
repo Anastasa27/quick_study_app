@@ -33,7 +33,7 @@ quickStudyApp.createStack = function(data, el) {
   var stackView = new StackView(stack, el).init();
 
 
-   $('#list-stacks').append(stackView.$el);
+   // $('#list-stacks').append(stackView.$el);
 
   quickStudyApp.pushView(stackView);
   return stack; // return the model for chaining!
@@ -43,7 +43,7 @@ quickStudyApp.createCard = function(data, el) {
   var card     = new Card(data);
   var cardView = new CardView(card, el).init();
 
- $('#flashcard-front').append(cardView.$el);
+ // $('#flashcard-front').append(cardView.$el);
 
 
 
