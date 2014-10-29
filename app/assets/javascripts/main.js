@@ -92,8 +92,8 @@ $(function(){
 
   quickStudyApp.$body         = $("body");
 
-  $('.sample').on("click", flip);
-  $('.sample').on("click", switchCard);
+  $('body').on("click", '.sample', flip);
+  $('body').on("click", '.sample', switchCard);
 
   cards = [];
 
