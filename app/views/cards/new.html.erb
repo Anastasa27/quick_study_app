@@ -1,9 +1,28 @@
+<div class="clearfix" id="container">
+
+<div id="splash-info">
 <div class="page-header">
   <h1>QuickStudy</h1>
 </div>
-
-<h1>Add a  Card</h1>
+<div>
+<h3>Add a Card</h3>
 
 <%= render 'form' %>
 
-<%= link_to 'Back', cards_path %>
+<%= link_to 'Back', current_user %>
+ </div>
+  </div><!-- splash-info -->
+<div id="splash-sample">
+    <div class="sample">
+      <div class="card">
+        <div  class="flashcard-front">
+          <p id="add-a-card-text-front">Question Goes Here</p>
+        </div>
+        <div class="flashcard-back">
+          <p id="add-a-card-text-back">Answer Goes Here</p>
+        </div>
+      </div>
+    </div>
+  </div><!--splash sample-->
+
+</div><!-- container -->

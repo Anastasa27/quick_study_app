@@ -241,4 +241,26 @@ box-shadow: 1px 1px 1px 0px #888888;
   transition: allease.5s;
 }
 
+#add-a-card-text-front, #add-a-card-text-back {
+  margin-top: 8em;
+  font-family: 'Nixie One', cursive;
+  font-size: 28px;
+  list-style: none;
+  color: rgb(117,117,117);
+}
 
+#add-a-stack-text-front {
+  margin-top: 8em;
+  font-family: 'Nixie One', cursive;
+  font-size: 28px;
+  list-style: none;
+  color: rgb(117,117,117);
+}
+
+#add-a-stack-text-back {
+  margin-top: 8em;
+  font-family: 'Nixie One', cursive;
+  font-size: 28px;
+  list-style: none;
+  color: rgb(117,117,117);
+}

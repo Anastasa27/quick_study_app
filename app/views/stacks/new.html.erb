@@ -1,11 +1,31 @@
+<div class="clearfix" id="container">
+
+<div id="splash-info">
 <div class="page-header">
   <h1>QuickStudy</h1>
 </div>
 
-<h2>Make a New Stack</h2>
+<div>
+<h3>Make a New Stack</h3>
 
 <%= render 'form' %>
 
-<%= link_to 'Back', stacks_path %> |
+<%= link_to 'Back', current_user %> |
 
 <%= link_to 'Add a Card', "/cards/new" %>
+ </div>
+  </div><!-- splash-info -->
+<div id="splash-sample">
+    <div class="sample">
+      <div class="card">
+        <div  class="flashcard-front">
+          <p id="add-a-stack-text-front">Create your Own</p>
+        </div>
+        <div class="flashcard-back">
+          <p id="add-a-stack-text-back">Choose Any Category</p>
+        </div>
+      </div>
+    </div>
+  </div><!--splash sample-->
+
+</div><!-- container -->
