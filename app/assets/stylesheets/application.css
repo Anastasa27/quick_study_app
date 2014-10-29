@@ -55,7 +55,7 @@
 #welcome-user {
   font-family: 'Josefin Sans', sans-serif;
   color:rgb(117,117,117);
-  font-size: 14px;
+  font-size: 18px;
 }
 
 /** {
@@ -133,13 +133,17 @@
   font-family: 'Nixie One', cursive;
   font-size: 28px;
   list-style: none;
+  color: rgb(117,117,117);
 }
 
 .card-back-text {
   font-family: 'Nixie One', cursive;
   font-size: 28px;
   list-style: none;
+  color: rgb(117,117,117);
 }
+
+
 
 .hidden {
   display: none;
@@ -168,6 +172,7 @@
   font-family: 'Nixie One', cursive;
   font-size: 28px;
   list-style: none;
+  color: rgb(117,117,117);
 }
 .index{
   z-index: 2;
@@ -218,10 +223,12 @@ box-shadow: 1px 1px 1px 0px #888888;
   font-family: 'Nixie One', cursive;
   font-size: 28px;
   list-style: none;
+  color: rgb(117,117,117);
 }
 
 #stack-list-text {
   font-family: 'Josefin Sans', sans-serif;
+  font-size: 20px;
 }
 
  a{
@@ -229,6 +236,7 @@ box-shadow: 1px 1px 1px 0px #888888;
   border: 1pxsolidrgba(0,0,0,0.4);
   text-decoration: none;
   font-family: 'Josefin Sans', sans-serif;
+  font-size: 14px;
   color: rgb(117,117,117);
   transition: allease.5s;
 }

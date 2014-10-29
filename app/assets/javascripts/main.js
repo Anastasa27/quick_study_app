@@ -8,7 +8,6 @@ quickStudyApp.stackNum   = 0;
 quickStudyApp.stackViews = {};
 quickStudyApp.cardViews  = {};
 quickStudyApp.cardNum    = 0;
-quickStudyApp.totalCards;
 quickStudyApp.showing    = 'front';
 
 function flip() {
@@ -21,7 +20,7 @@ function flip() {
 
 function switchCard() {
   if (quickStudyApp.showing == 'back') {
-    if (quickStudyApp.cardNum < quickStudyApp.totalCards - 1) {
+    if (quickStudyApp.cardNum < quickStudyApp.totalCards - 0) {
       quickStudyApp.cardNum++;
     } else {
       quickStudyApp.cardNum = 0;
@@ -40,7 +39,7 @@ function showCard(first) {
 
   if (!first) {
     $(quickStudyApp.$cardFronts[quickStudyApp.cardNum - 1]).addClass('hidden');
-    $(quickStudyApp.$cardBacks[quickStudyApp.cardNum - 1]).addClass('hidden');
+    $(quickStudyApp.$cardBacks[quickStudyApp.cardNum - 1]).addClass('hidden').delay( 800 );
   }
 }
 
@@ -109,19 +108,17 @@ $(function(){
   console.log('2. page (DOM) loaded: now running onload...');
 
   quickStudyApp.$body         = $("body");
-  quickStudyApp.$inputField   = $("input");
-  quickStudyApp.$submitButton = $("button");
+  // quickStudyApp.$inputField   = $("input");
+  // quickStudyApp.$submitButton = $("button");
   // quickStudyApp.$stackList     = $("ul").eq(0);
 
   // attach a model & view creation function to the form submission
   // quickStudyApp.$submitButton.on("click", function(event){
     // event.preventDefault();
-    var stackDescription = quickStudyApp.$inputField.val();
-    quickStudyApp.$inputField.val(''); // reset the input
-    quickStudyApp.createStack({ description: stackDescription });
-           // .create(); // call create on the model that is returned (see above)
-  });
-
+  // var stackDescription = quickStudyApp.$inputField.val();
+  // quickStudyApp.$inputField.val(''); // reset the input
+  // quickStudyApp.createStack({ description: stackDescription });
+  //          // .create(); // call create on the model that is returned (see above)
   $('.sample').on("click", flip);
   $('.sample').on("click", switchCard);
 
@@ -157,27 +154,4 @@ $(function(){
     });
   });
 
-
-
-  // showCard();
-   // var cardDescription = quickStudyApp.$inputField.val();
-   //  quickStudyApp.$inputField.val(''); // reset the input
-   //  quickStudyApp.createCard({ description: cardDescription })
-   //         .create(); // call create on the model that is returned (see above)
-  // });
-  // start the app!
-   // quickStudyApp.loadStacks();
-  // quickStudyApp.$stackList.children().each(function(idx, li){
-  //   var data = {}, $li = $(li);
-  //   data.category = $li.find("span.category").text().trim();
-  //   data.id          = $li.data("id");
-  //   quickStudyApp.createStack(data, li);
-  // });
-
-  // quickStudyApp.$cardList.children().each(function(idx, li){
-  //   var data = {}, $li = $(li);
-  //   data.question = $li.find("span.question").text().trim();
-  //   data.answer = $li.find("span.answer").text().trim();
-  //   data.id          = $li.data("id");
-  //   quickStudyApp.createCard(data, li);
-  // });
+}); // document.ready

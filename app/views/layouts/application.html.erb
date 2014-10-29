@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>QuickStudyApp</title>
-  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= stylesheet_link_tag 'application', media: 'all' %>
   <link href='http://fonts.googleapis.com/css?family=Nixie+One' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Josefin+Sans' rel='stylesheet' type='text/css'>
   <%= csrf_meta_tags %>
@@ -10,11 +10,13 @@
   <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore-min.js"></script>
 
+
 </head>
 <body>
-
   <%= yield %>
 
   <%= javascript_include_tag 'application' %>
+
 </body>
+
 </html>

@@ -18,6 +18,11 @@ Rails.application.routes.draw do
 
   get "/stacks" => 'stacks#index'
 
+  get "/cards" => 'cards#new'
+
+  get "/stacks" => 'stacks#new'
+
+
   resources :stacks do
     resources :cards
   end

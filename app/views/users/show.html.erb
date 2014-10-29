@@ -15,8 +15,9 @@
       <%= link_to 'Edit Profile', edit_user_path(@user) %> |
       <%= link_to("Logout", session_path, method: :delete) %>
     </div>
-
+    <br>
     <!-- STACKS -->
+    <h3>Card Stacks</h3>
     <div id="list-stacks"></div>
   </div>
 
@@ -27,7 +28,9 @@
       <!-- CARD(s) -->
       <div class="card" id="flashcard">
         <div class="index flashcard-front"></div>
+
         <div class="flashcard-back"></div>
+
       </div>
 
     </div>
@@ -52,3 +55,5 @@
 
 
 
+
+  <!-- // $(document).ready(showPage); -->
