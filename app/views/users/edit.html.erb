@@ -1,6 +1,31 @@
+<div class="clearfix" id="container">
+
+<div id="splash-info">
+<div class="page-header">
+  <h1>QuickStudy</h1>
+</div>
+
+<div>
+
 <h3>Update Your Profile</h3>
 
 <%= render 'form' %>
 
 <%= link_to 'Show', @user %> |
 <%= link_to 'Back', users_path %>
+ </div>
+  </div><!-- splash-info -->
+<div id="splash-sample">
+    <div class="sample">
+      <div class="card">
+        <div  class="flashcard-front">
+          <p id="edit-profile-text-front">Update Your Profile</p>
+        </div>
+        <div class="flashcard-back">
+          <p id="edit-profile-text-back">Be Sure To Remember Your Password</p>
+        </div>
+      </div>
+    </div>
+  </div><!--splash sample-->
+
+</div><!-- container -->
