@@ -5,9 +5,11 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-
+User.delete_all
+Stack.delete_all
+Card.delete_all
 #user 1#
-anastasia = User.create(username:'Anastasia', password:'2777')
+anastasia = User.create(username:'Anastasia', password:'2777', password_confirmation:'2777')
 
 sample_stack = Stack.create(category:'Lost In Translation')
 
@@ -75,145 +77,145 @@ card10.stack_id = sample_stack.id
 
 card10.save
 
-#user 2
+# user 2
 
-# isabella = User.create(username:'Isabella', password:'1107')
+isabella = User.create(username:'Isabella', password:'1107', password_confirmation:'1107')
 
-# sample_stack2 = Stack.create(category:'Awesome Books')
+sample_stack2 = Stack.create(category:'Awesome Books')
 
-# icard1 = Card.create(question:'The Famished Road',answer:'Ben Okri')
+icard1 = Card.create(question:'The Famished Road',answer:'Ben Okri')
 
-# icard2 = Card.create(question:'NW',answer:'Zadie Smith')
+icard2 = Card.create(question:'NW',answer:'Zadie Smith')
 
-# icard3 = Card.create(question:'Lolita',answer:'Vladimir Nabokov')
+icard3 = Card.create(question:'Lolita',answer:'Vladimir Nabokov')
 
-# icard4 = Card.create(question:'TransAtlantic',answer:'Colum McCann')
+icard4 = Card.create(question:'TransAtlantic',answer:'Colum McCann')
 
-# icard5 = Card.create(question:'Love in the Time of Cholera',answer:'Gabriel García Márquez')
+icard5 = Card.create(question:'Love in the Time of Cholera',answer:'Gabriel García Márquez')
 
-# icard6 = Card.create(question:'Americanah',answer:'Chimamanda Ngozi Adichie')
+icard6 = Card.create(question:'Americanah',answer:'Chimamanda Ngozi Adichie')
 
-# icard7 = Card.create(question:'A Visit From the Goon Squad',answer:'Jennifer Egan')
+icard7 = Card.create(question:'A Visit From the Goon Squad',answer:'Jennifer Egan')
 
-# icard8 = Card.create(question:'Unaccustomed Earth',answer:'Jhumpa Lahiri')
+icard8 = Card.create(question:'Unaccustomed Earth',answer:'Jhumpa Lahiri')
 
-# icard9 = Card.create(question:'The Amazing Adventures of Kavalier & Clay',answer:'Michael Chabon')
+icard9 = Card.create(question:'The Amazing Adventures of Kavalier & Clay',answer:'Michael Chabon')
 
-# icard10 = Card.create(question:'The Left Hand of Darkness',answer:'Ursula K. Le Guin')
+icard10 = Card.create(question:'The Left Hand of Darkness',answer:'Ursula K. Le Guin')
 
-# sample_stack2.user_id = isabella.id
+sample_stack2.user_id = isabella.id
 
-# sample_stack2.save
+sample_stack2.save
 
-# icard1.stack_id = sample_stack2.id
+icard1.stack_id = sample_stack2.id
 
-# icard1.save
+icard1.save
 
-# icard2.stack_id = sample_stack2.id
+icard2.stack_id = sample_stack2.id
 
-# icard2.save
+icard2.save
 
-# icard3.stack_id = sample_stack2.id
+icard3.stack_id = sample_stack2.id
 
-# icard3.save
+icard3.save
 
-# icard4.stack_id = sample_stack2.id
+icard4.stack_id = sample_stack2.id
 
-# icard4.save
+icard4.save
 
-# icard5.stack_id = sample_stack2.id
+icard5.stack_id = sample_stack2.id
 
-# icard5.save
+icard5.save
 
-# icard6.stack_id = sample_stack2.id
+icard6.stack_id = sample_stack2.id
 
-# icard6.save
+icard6.save
 
-# icard7.stack_id = sample_stack2.id
+icard7.stack_id = sample_stack2.id
 
-# icard7.save
+icard7.save
 
-# icard8.stack_id = sample_stack2.id
+icard8.stack_id = sample_stack2.id
 
-# icard8.save
+icard8.save
 
-# icard9.stack_id = sample_stack2.id
+icard9.stack_id = sample_stack2.id
 
-# icard9.save
+icard9.save
 
-# icard10.stack_id = sample_stack2.id
+icard10.stack_id = sample_stack2.id
 
-# icard10.save
+icard10.save
 
-# #user 3
+#user 3
 
-# desmond = User.create(username:'Desmond', password:'0105')
+desmond = User.create(username:'Desmond', password:'0105', password_confirmation:'0105')
 
-# sample_stack3 = Stack.create(category:'African Countries/Capitols')
+sample_stack3 = Stack.create(category:'African Countries/Capitols')
 
-# dcard1 = Card.create(question:'Mozambique',answer:'Maputo')
+dcard1 = Card.create(question:'Mozambique',answer:'Maputo')
 
-# dcard2 = Card.create(question:'South Africa',answer:'Pretoria')
+dcard2 = Card.create(question:'South Africa',answer:'Pretoria')
 
-# dcard3 = Card.create(question:'Zambia',answer:'Lusaka')
+dcard3 = Card.create(question:'Zambia',answer:'Lusaka')
 
-# dcard4 = Card.create(question:'Morocco',answer:'Rabat')
+dcard4 = Card.create(question:'Morocco',answer:'Rabat')
 
-# dcard5 = Card.create(question:'Senegal',answer:'Dakar')
+dcard5 = Card.create(question:'Senegal',answer:'Dakar')
 
-# dcard6 = Card.create(question:'Angola',answer:'Luongo')
+dcard6 = Card.create(question:'Angola',answer:'Luongo')
 
-# dcard7 = Card.create(question:'Burkina Faso',answer:'Ouagadougou')
+dcard7 = Card.create(question:'Burkina Faso',answer:'Ouagadougou')
 
-# dcard8 = Card.create(question:'Libya',answer:'Tripoli')
+dcard8 = Card.create(question:'Libya',answer:'Tripoli')
 
-# dcard9 = Card.create(question:'Mali',answer:'Bamako')
+dcard9 = Card.create(question:'Mali',answer:'Bamako')
 
-# dcard10 = Card.create(question:'Uganda',answer:'Kampala')
+dcard10 = Card.create(question:'Uganda',answer:'Kampala')
 
-# sample_stack3.user_id = desmond.id
+sample_stack3.user_id = desmond.id
 
-# sample_stack3.save
+sample_stack3.save
 
-# dcard1.stack_id = sample_stack3.id
+dcard1.stack_id = sample_stack3.id
 
-# dcard1.save
+dcard1.save
 
-# dcard2.stack_id = sample_stack3.id
+dcard2.stack_id = sample_stack3.id
 
-# dcard2.save
+dcard2.save
 
-# dcard3.stack_id = sample_stack3.id
+dcard3.stack_id = sample_stack3.id
 
-# dcard3.save
+dcard3.save
 
-# dcard4.stack_id = sample_stack3.id
+dcard4.stack_id = sample_stack3.id
 
-# dcard4.save
+dcard4.save
 
-# dcard5.stack_id = sample_stack3.id
+dcard5.stack_id = sample_stack3.id
 
-# dcard5.save
+dcard5.save
 
-# dcard6.stack_id = sample_stack3.id
+dcard6.stack_id = sample_stack3.id
 
-# dcard6.save
+dcard6.save
 
-# dcard7.stack_id = sample_stack3.id
+dcard7.stack_id = sample_stack3.id
 
-# dcard7.save
+dcard7.save
 
-# dcard8.stack_id = sample_stack3.id
+dcard8.stack_id = sample_stack3.id
 
-# dcard8.save
+dcard8.save
 
-# dcard9.stack_id = sample_stack3.id
+dcard9.stack_id = sample_stack3.id
 
-# dcard9.save
+dcard9.save
 
-# dcard10.stack_id = sample_stack3.id
+dcard10.stack_id = sample_stack3.id
 
-# dcard10.save
+dcard10.save
 
 
 
