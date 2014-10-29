@@ -24,6 +24,7 @@ class StacksController < ApplicationController
 
   # GET /stacks/1/edit
   def edit
+    @stack = Stack.update
   end
 
   # POST /stacks

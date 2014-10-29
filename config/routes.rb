@@ -18,7 +18,7 @@ Rails.application.routes.draw do
 
   get "/stacks" => 'stacks#index'
 
-  get "/cards" => 'cards#new'
+  get "/cards/new" => 'cards#new'
 
   get "/stacks" => 'stacks#new'
 

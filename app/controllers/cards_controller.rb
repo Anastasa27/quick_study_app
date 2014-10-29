@@ -19,7 +19,7 @@ class CardsController < ApplicationController
 
   # GET /cards/new
   def new
-    # @card = Card.new
+    @card = Card.new
   end
 
   # GET /cards/1/edit
