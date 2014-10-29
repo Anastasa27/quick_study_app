@@ -24,7 +24,7 @@ Stack.prototype.create = function() {
     this.id        = data.id;
     console.log('!(AJAX) model:create complete', data, this);
   });
-}
+};
 
 Stack.prototype.update = function() {
   console.log('!(AJAX) model:update initiated');
@@ -41,7 +41,7 @@ Stack.prototype.update = function() {
   }).done(function(data){
     console.log('!(AJAX) model:update complete', data, this);
   });
-}
+};
 
 Stack.prototype.destroy = function(){
   console.log('!(AJAX) model:destroy initiated');
@@ -53,4 +53,4 @@ Stack.prototype.destroy = function(){
   }).done(function(data){
     console.log('!(AJAX) model:destroy complete', data, this);
   });
-}
+};
