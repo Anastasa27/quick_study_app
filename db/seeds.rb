@@ -81,27 +81,27 @@ card10.save
 
 isabella = User.create(username:'Isabella', password:'1107', password_confirmation:'1107')
 
-sample_stack2 = Stack.create(category:'Awesome Books')
+sample_stack2 = Stack.create(category:'Awesome Books/Authors')
 
-icard1 = Card.create(question:'The Famished Road',answer:'Ben Okri')
+icard1 = Card.create(question:'"The Famished Road"',answer:'Ben Okri')
 
-icard2 = Card.create(question:'NW',answer:'Zadie Smith')
+icard2 = Card.create(question:'"NW"',answer:'Zadie Smith')
 
-icard3 = Card.create(question:'Lolita',answer:'Vladimir Nabokov')
+icard3 = Card.create(question:'"Lolita"',answer:'Vladimir Nabokov')
 
-icard4 = Card.create(question:'TransAtlantic',answer:'Colum McCann')
+icard4 = Card.create(question:'"TransAtlantic"',answer:'Colum McCann')
 
-icard5 = Card.create(question:'Love in the Time of Cholera',answer:'Gabriel García Márquez')
+icard5 = Card.create(question:'"Love in the Time of Cholera"',answer:'Gabriel García Márquez')
 
-icard6 = Card.create(question:'Americanah',answer:'Chimamanda Ngozi Adichie')
+icard6 = Card.create(question:'"Americanah"',answer:'Chimamanda Ngozi Adichie')
 
-icard7 = Card.create(question:'A Visit From the Goon Squad',answer:'Jennifer Egan')
+icard7 = Card.create(question:'"A Visit From the Goon Squad"',answer:'Jennifer Egan')
 
-icard8 = Card.create(question:'Unaccustomed Earth',answer:'Jhumpa Lahiri')
+icard8 = Card.create(question:'"Unaccustomed Earth"',answer:'Jhumpa Lahiri')
 
-icard9 = Card.create(question:'The Amazing Adventures of Kavalier & Clay',answer:'Michael Chabon')
+icard9 = Card.create(question:'"The Amazing Adventures of Kavalier & Clay"',answer:'Michael Chabon')
 
-icard10 = Card.create(question:'The Left Hand of Darkness',answer:'Ursula K. Le Guin')
+icard10 = Card.create(question:'"The Left Hand of Darkness"',answer:'Ursula K. Le Guin')
 
 sample_stack2.user_id = isabella.id
 
