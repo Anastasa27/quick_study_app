@@ -37,6 +37,13 @@
     }
   }
 
+input[type="submit"]{
+  background-color: whitesmoke;
+border-radius: 3px;
+height: 2em;
+color: gray;
+font-family: 'Josefin Sans', sans-serif;
+}
 
 #list-stacks {
   list-style: none;
@@ -81,6 +88,8 @@
 .clearfix {
   *zoom: 1;
 }
+
+
 
 #splash-info {
   float: left;
@@ -130,6 +139,7 @@
 }
 
 .card-front-text {
+  line-height: 1;
   font-family: 'Nixie One', cursive;
   font-size: 28px;
   list-style: none;
@@ -137,6 +147,7 @@
 }
 
 .card-back-text {
+  line-height: 1;
   font-family: 'Nixie One', cursive;
   font-size: 28px;
   list-style: none;
@@ -219,6 +230,7 @@ box-shadow: 1px 1px 1px 0px #888888;
 }
 
 #question-text {
+  line-height: 1;
   margin-top: 8em;
   font-family: 'Nixie One', cursive;
   font-size: 28px;
@@ -227,6 +239,7 @@ box-shadow: 1px 1px 1px 0px #888888;
 }
 
 #stack-list-text {
+  line-height: 1;
   font-family: 'Josefin Sans', sans-serif;
   font-size: 20px;
 }
@@ -242,6 +255,7 @@ box-shadow: 1px 1px 1px 0px #888888;
 }
 
 #add-a-card-text-front, #add-a-card-text-back {
+  line-height: 1;
   margin-top: 8em;
   font-family: 'Nixie One', cursive;
   font-size: 28px;
@@ -250,6 +264,7 @@ box-shadow: 1px 1px 1px 0px #888888;
 }
 
 #add-a-stack-text-front {
+  line-height: 1;
   margin-top: 8em;
   font-family: 'Nixie One', cursive;
   font-size: 28px;
@@ -258,6 +273,7 @@ box-shadow: 1px 1px 1px 0px #888888;
 }
 
 #add-a-stack-text-back {
+  line-height: 1;
   margin-top: 8em;
   font-family: 'Nixie One', cursive;
   font-size: 28px;
@@ -266,6 +282,7 @@ box-shadow: 1px 1px 1px 0px #888888;
 }
 
 #edit-profile-text-front, #edit-profile-text-back {
+  line-height: 1;
    margin-top: 8em;
   font-family: 'Nixie One', cursive;
   font-size: 28px;

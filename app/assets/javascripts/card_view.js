@@ -1,6 +1,6 @@
 console.log("card_view.js linked");
 
-// $(document).ready(function(){
+
 function CardView(model, el){
   console.log('view created with model:', model);
 
@@ -46,8 +46,6 @@ CardView.prototype = {
     return this; // for chaining!
   },
 
-
-
   remove: function(event) {
     console.log('-> view:remove', event.data);
 
@@ -55,7 +53,7 @@ CardView.prototype = {
     event.data.$el.remove();
 
     // remove from global list!
-    // http://stackoverflow.com/questions/208105/how-to-remove-a-property-from-a-javascript-object
+
     delete quickStudyApp.cardViews[event.data.viewId];
 
     // message the model
@@ -63,7 +61,7 @@ CardView.prototype = {
   }
 };
 
-// });
+
 
 
 

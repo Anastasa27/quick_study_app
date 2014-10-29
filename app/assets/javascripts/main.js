@@ -71,9 +71,6 @@ quickStudyApp.createStack = function(data, el) {
   var stack     = new Stack(data);
   var stackView = new StackView(stack, el).init();
 
-
-   // $('#list-stacks').append(stackView.$el);
-
   quickStudyApp.pushView(stackView);
   return stack; // return the model for chaining!
 };
@@ -83,28 +80,10 @@ quickStudyApp.createCard = function(data, el) {
   // debugger
   var cardView = new CardView(card, el).init();
 
- // $('#flashcard-front').append(cardView.$el);
-
-
-
   quickStudyApp.pushViewC(cardView);
   return card; // return the model for chaining!
 };
 
-// NOT doing the below b/c we are loading the page WITH the
-//   current state of the DB!
-// quickStudyApp.loadStacks = function() {
-//   // INDEX: GET /stack
-//   $.ajax({
-//     url: "/stack",
-//     format: "json"
-//   }).done(function(data){
-//     // create a local stack (stack model, view and pushed on to the stack list)
-//     for(var i = 0; i < data.length; i++){
-//       quickStudyApp.createStack(data[i]);
-//     }
-//   });
-// }
 
 console.log("1. application initialized...", quickStudyApp);
 
@@ -112,17 +91,7 @@ $(function(){
   console.log('2. page (DOM) loaded: now running onload...');
 
   quickStudyApp.$body         = $("body");
-  // quickStudyApp.$inputField   = $("input");
-  // quickStudyApp.$submitButton = $("button");
-  // quickStudyApp.$stackList     = $("ul").eq(0);
 
-  // attach a model & view creation function to the form submission
-  // quickStudyApp.$submitButton.on("click", function(event){
-    // event.preventDefault();
-  // var stackDescription = quickStudyApp.$inputField.val();
-  // quickStudyApp.$inputField.val(''); // reset the input
-  // quickStudyApp.createStack({ description: stackDescription });
-  //          // .create(); // call create on the model that is returned (see above)
   $('.sample').on("click", flip);
   $('.sample').on("click", switchCard);
 
