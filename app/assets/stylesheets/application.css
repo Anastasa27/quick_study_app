@@ -133,14 +133,13 @@
   font-family: 'Nixie One', cursive;
   font-size: 28px;
   list-style: none;
-  color: rgb(117,117,117);
+
 }
 
 .card-back-text {
   font-family: 'Nixie One', cursive;
   font-size: 28px;
   list-style: none;
-  color: rgb(117,117,117);
 }
 
 
@@ -158,6 +157,7 @@
 }
 
 .flashcard-back, .flashcard-front{
+
   backface-visibility: hidden;
   position: absolute;
 

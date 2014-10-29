@@ -25,7 +25,11 @@ function switchCard() {
     } else {
       quickStudyApp.cardNum = 0;
     }
+
+    setTimeout(function() {
     showCard();
+
+    }, 200);
     quickStudyApp.showing = 'front';
   } else {
     quickStudyApp.showing = 'back';
@@ -39,7 +43,7 @@ function showCard(first) {
 
   if (!first) {
     $(quickStudyApp.$cardFronts[quickStudyApp.cardNum - 1]).addClass('hidden');
-    $(quickStudyApp.$cardBacks[quickStudyApp.cardNum - 1]).addClass('hidden').delay( 800 );
+    $(quickStudyApp.$cardBacks[quickStudyApp.cardNum - 1]).addClass('hidden');
   }
 }
 
