@@ -38,7 +38,7 @@
   }
 
 input[type="submit"]{
-  background-color: whitesmoke;
+  background-color: rgb(245,245,245);
 border-radius: 3px;
 height: 2em;
 color: gray;
@@ -147,6 +147,7 @@ font-family: 'Josefin Sans', sans-serif;
 }
 
 .card-back-text {
+  margin-top: 8em;
   line-height: 1;
   font-family: 'Nixie One', cursive;
   font-size: 28px;
@@ -190,6 +191,7 @@ font-family: 'Josefin Sans', sans-serif;
 }
 
 .flashcard-back {
+
 -webkit-transform: rotateY(180deg);
 color: rgb(78,89,89);
 height: 500px;
