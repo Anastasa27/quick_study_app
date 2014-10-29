@@ -28,6 +28,8 @@ gem 'spring',        group: :development
 
 gem 'pry-rails',           group:  :development
 
+gem 'rails_12factor', group: :production
+
 # gem 'jquery-turbolinks'
 
 # Use ActiveModel has_secure_password
