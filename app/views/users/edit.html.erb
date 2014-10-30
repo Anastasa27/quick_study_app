@@ -30,3 +30,13 @@
   </div><!--splash sample-->
 
 </div><!-- container -->
+
+<script>
+function flip() {
+  if ($('.card').hasClass("flipped")) {
+    $('.card').css("transform", "rotateY(0deg)").toggleClass("flipped");
+  } else {
+    $('.card').css("transform", "rotateY(180deg)").addClass("flipped");
+  }
+}
+</script>

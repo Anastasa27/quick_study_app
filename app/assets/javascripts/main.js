@@ -9,6 +9,7 @@ quickStudyApp.stackViews = {};
 quickStudyApp.cardViews  = {};
 quickStudyApp.cardNum    = 0;
 quickStudyApp.showing    = 'front';
+quickStudyApp.totalCards;
 
 function flip() {
   if ($('.card').hasClass("flipped")) {
