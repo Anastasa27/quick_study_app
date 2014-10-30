@@ -87,7 +87,7 @@ quickStudyApp.createCard = function(data, el) {
 
 console.log("1. application initialized...", quickStudyApp);
 
-$(function(){
+function pageLoad(){
   console.log('2. page (DOM) loaded: now running onload...');
 
   quickStudyApp.$body         = $("body");
@@ -127,4 +127,5 @@ $(function(){
     });
   });
 
-}); // document.ready
+}
+$(document).ready(pageLoad); // document.ready
