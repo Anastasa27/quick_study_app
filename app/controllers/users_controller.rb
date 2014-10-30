@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   before_action :authenticate,            except: [:new, :create]
   before_action :load_user,               except: [:index, :new, :create]
-  # before_action :authorize_user_only,     only:   :show
+  # before_action :authorize_user_only,     only:   [:show, :new, :create]
   # before_action :authorize_user_or_admin, except: [:index, :show, :new, :create]
    # GET /users/new
   def new
@@ -14,14 +14,10 @@ class UsersController < ApplicationController
   #   render :show
   # end
   def create
-    user = User.create
+    @user = User.new
   end
 
-  def stack
-  end
 
-  def cards
-  end
 
   # GET /users/1
   # GET /users/1.json
@@ -44,6 +40,8 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if@user.save
+      user == User.find_by(username: user_params["username"])
+      id = user.id
       redirect_to user_path(@user)
     else
       render :new

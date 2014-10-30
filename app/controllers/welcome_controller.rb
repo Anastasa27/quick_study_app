@@ -4,7 +4,7 @@ class WelcomeController < ApplicationController
       user = User.find_by(id: session[:user_id])
       redirect_to(user_path(user))
     else
-      redirect_to(user_path)
+      redirect_to(root_path)
     end
   end
 end
