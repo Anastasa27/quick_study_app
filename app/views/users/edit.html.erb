@@ -6,15 +6,15 @@
         <h1>QuickStudy</h1>
       </div><!-- page-header -->
     </a>
+
+    <h3>Update Your Profile</h3>
+
+    <%= render 'form' %>
+
+    <%= link_to 'Show', @user %> |
+    <%= link_to 'Back', current_user %>
+
   </div><!-- splash-info -->
-
-  <h3>Update Your Profile</h3>
-
-  <%= render 'form' %>
-
-  <%= link_to 'Show', @user %> |
-  <%= link_to 'Back', current_user %>
-
 
   <div id="splash-sample">
     <div class="sample">
