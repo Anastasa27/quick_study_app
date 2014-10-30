@@ -40,6 +40,10 @@ jQuery, Modernizr, Underscore.js
 
 
 
+*********
+
+Checkout [QuickStudy](https://quickstudy.herokuapp.com/) on Heroku
+
 *Created by Anastasia Konecky as the final project for General Assembly Web Development Immersive*
 
 
