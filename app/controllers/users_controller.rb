@@ -13,7 +13,9 @@ class UsersController < ApplicationController
   #   User.all.sort.reverse.reject {|user| user == current_user}
   #   render :show
   # end
-
+  def create
+    user = User.create
+  end
 
   def stack
   end
