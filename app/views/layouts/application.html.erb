@@ -11,20 +11,16 @@
 </head>
 <body>
   <%= yield %>
+  <script type="text/template" id="stack-template">
+    <br>
+    <li>
+      <p id="stack-list-text"><%%= stack.category %></p>
+    </li>
+  </script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore-min.js"></script>
 
   <%= javascript_include_tag 'application' %>
-<script>
-function flip() {
-  if ($('.card').hasClass("flipped")) {
-    $('.card').css("transform", "rotateY(0deg)").toggleClass("flipped");
-  } else {
-    $('.card').css("transform", "rotateY(180deg)").addClass("flipped");
-  }
-}
-</script>
 </body>
 
 </html>

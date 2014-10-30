@@ -1,6 +1,5 @@
 console.log("card_view.js linked");
 
-
 function CardView(model, el){
   console.log('view created with model:', model);
 

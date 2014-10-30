@@ -11,6 +11,9 @@ quickStudyApp.cardNum    = 0;
 quickStudyApp.showing    = 'front';
 quickStudyApp.totalCards;
 
+$(document).ready(pageLoad); // document.ready
+
+
 function flip() {
   if ($('.card').hasClass("flipped")) {
     $('.card').css("transform", "rotateY(0deg)").toggleClass("flipped");
@@ -129,4 +132,3 @@ function pageLoad(){
   });
 
 }
-$(document).ready(pageLoad); // document.ready
