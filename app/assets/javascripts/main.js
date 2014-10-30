@@ -90,7 +90,7 @@ console.log("1. application initialized...", quickStudyApp);
 function pageLoad(){
   console.log('2. page (DOM) loaded: now running onload...');
 
-  quickStudyApp.$body         = $("body");
+  // quickStudyApp.$body         = $("body");
 
   $('body').on("click", '.sample', flip);
   $('body').on("click", '.sample', switchCard);
