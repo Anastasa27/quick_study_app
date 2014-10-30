@@ -16,7 +16,15 @@
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore-min.js"></script>
 
   <%= javascript_include_tag 'application' %>
-
+<script>
+function flip() {
+  if ($('.card').hasClass("flipped")) {
+    $('.card').css("transform", "rotateY(0deg)").toggleClass("flipped");
+  } else {
+    $('.card').css("transform", "rotateY(180deg)").addClass("flipped");
+  }
+}
+</script>
 </body>
 
 </html>
