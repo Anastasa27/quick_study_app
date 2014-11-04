@@ -2,7 +2,7 @@
 
 ###A Flash Card Application
 
-QuickStudy is a web application that provides students with a tool for quizzing their knowledge of a subject of their choice, using flash cards that they create. The current iteration of QuickStudy allows the user to create and view flash cards on their individual profile page.  Users can store, and edit the cards they create and access them by signing in with their unique id.  To play the flash cards, a user can simply mouse click on the card to flip it to the other side.
+QuickStudy is a web application that provides students with a tool for quizzing their knowledge of a subject of their choice, using flash cards that they create. The current iteration of QuickStudy allows the user to create and view flash cards on their individual profile page.  Users can store, and edit the cards they create and access them by signing in with their unique id and password.  To play the flash cards, a user can simply mouse click on the card to flip it to the other side.
 
 ![Imgur](http://i.imgur.com/PHynXnGl.png)
 
@@ -31,7 +31,7 @@ JavaScript
 
 ####Front End:
 JQuery
-Underscore.js for 
+Underscore.js for
 Ajax
 CSS, CSS3 animation
 
