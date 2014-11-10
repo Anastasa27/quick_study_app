@@ -16,7 +16,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    binding.pry
+    # binding.pry
     @user = User.new
   end
 
@@ -25,10 +25,12 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
-    # binding.pry
-    @user = User.find(params[:id])
-    @user.stacks.find(params[:id])
-
+      if @user.stacks.count == 0
+        redirect_to "/stacks/new"
+      else
+        @user = User.find(params[:id])
+        @user.stacks.find(params[:id])
+      end
   end
 
 
@@ -43,8 +45,8 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if@user.save
-      user == User.find_by(username: user_params["username"])
-      id = user.id
+      @user == User.find_by(username: user_params["username"])
+      id = @user.id
       redirect_to user_path(@user)
     else
       render :new
@@ -85,6 +87,6 @@ class UsersController < ApplicationController
 
 
     def user_params
-      params.require(:user).permit(:username, :password_digest, :private)
+      params.require(:user).permit(:username, :password, :password_confirmation, :private)
     end
 end
