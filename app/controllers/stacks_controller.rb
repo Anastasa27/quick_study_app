@@ -7,7 +7,6 @@ class StacksController < ApplicationController
     # binding.pry
     @stacks = Stack.where(user_id: current_user.id).sort_by {|stack| stack.created_at}
     render json: @stacks
-
   end
 
   # GET /stacks/1
@@ -29,17 +28,14 @@ class StacksController < ApplicationController
   # POST /stacks
   # POST /stacks.json
   def create
+    # binding.pry
     @stack = Stack.new(stack_params)
-    render json: @stack
-    # respond_to do |format|
-    #   if @stack.save
-    #     format.html { redirect_to @stack, notice: 'Stack was successfully created.' }
-    #     format.json { render :show, status: :created, location: @stack }
-    #   else
-    #     format.html { render :new }
-    #     format.json { render json: @stack.errors, status: :unprocessable_entity }
-    #   end
-    # end
+    if current_user.cards.count == 0
+      redirect_to "/cards/new"
+    else
+      @stack = Stack.new(stack_params)
+      render json: @stack
+    end
   end
 
   # PATCH/PUT /stacks/1
