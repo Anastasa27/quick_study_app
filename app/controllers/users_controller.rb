@@ -9,11 +9,14 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
-  # def index
-  #   User.all.sort.reverse.reject {|user| user == current_user}
-  #   render :show
-  # end
+  def index
+    # binding.pry
+    User.all.sort.reverse.reject {|user| user == current_user}
+    render :show
+  end
+
   def create
+    binding.pry
     @user = User.new
   end
 

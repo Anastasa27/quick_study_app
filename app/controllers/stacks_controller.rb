@@ -6,7 +6,6 @@ class StacksController < ApplicationController
   def index
     # binding.pry
     @stacks = Stack.where(user_id: current_user.id).sort_by {|stack| stack.created_at}
-    # binding.pry
     render json: @stacks
 
   end

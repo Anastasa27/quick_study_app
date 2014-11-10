@@ -11,7 +11,7 @@ quickStudyApp.cardNum    = 0;
 quickStudyApp.showing    = 'front';
 quickStudyApp.totalCards;
 
-$(document).ready(pageLoad); // document.ready
+$(document).ready(); // document.ready
 
 
 function flip() {
@@ -91,7 +91,7 @@ quickStudyApp.createCard = function(data, el) {
 
 console.log("1. application initialized...", quickStudyApp);
 
-function pageLoad(){
+// function pageLoad(){
   console.log('2. page (DOM) loaded: now running onload...');
 
   // quickStudyApp.$body         = $("body");
@@ -131,4 +131,4 @@ function pageLoad(){
     });
   });
 
-}
+// }
