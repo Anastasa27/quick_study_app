@@ -41,7 +41,7 @@ function switchCard() {
 }
 
 function showCard(first) {
-  // debugger
+
   $(quickStudyApp.$cardFronts[quickStudyApp.cardNum]).removeClass('hidden');
   $(quickStudyApp.$cardBacks[quickStudyApp.cardNum]).removeClass('hidden');
 

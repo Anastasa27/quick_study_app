@@ -31,7 +31,7 @@ class StacksController < ApplicationController
     # binding.pry
     @stack = Stack.new(stack_params)
     if current_user.cards.count == 0
-      redirect_to "/cards/new"
+        redirect_to user_path(current_user)
     else
       @stack = Stack.new(stack_params)
       render json: @stack
@@ -74,4 +74,6 @@ class StacksController < ApplicationController
     def stack_params
       params.require(:stack).permit(:category, :user_id)
     end
+
+
 end
