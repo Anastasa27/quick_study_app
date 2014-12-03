@@ -19,7 +19,6 @@ CardView.prototype = {
     var front = this.frontTemplate({card: this.model});
     var back  = this.backTemplate( {card: this.model});
 
-    // debugger
 
     this.$el.find(".flashcard-front").append(front);
     this.$el.find(".flashcard-back").append(back);
@@ -30,7 +29,7 @@ CardView.prototype = {
   init: function() {
     console.log('  view:init', this);
     var view = this;
-    // debugger
+
 
     if (!this.$el) {
       this.$el = $("#flashcard");
